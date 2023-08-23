@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.container {
+  width: $desctop-width;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.header {
+  box-shadow: $header-shadow;
+  height: 100px;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 25% auto 25%;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__logo-container {
+    align-self: center;
+  }
+
+  &__socials {
+    display: flex;
+    justify-self: end;
+  }
+
+  &__payment-button {
+    width: 206px;
+    height: 58px;
+    justify-self: center;
+    align-self: center;
+  }
+
+  &__localization {
+    margin-left: 20px;
+  }
+}
+
