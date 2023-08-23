@@ -1,0 +1,15 @@
+{
+  "payment_button": "оплатити",
+  "footer_links": {
+    "cv_writing": "Составление резюме",
+    "admission_to_universities": "Организация поступления в ВУЗы",
+    "prepare_to_technical_language_test": "Подготовка к Fachsprachprüfung",
+    "conversational_club": "Разговорный клуб медицинская лексика",
+    "preparing_documents": "Подготовка пакета документов для миграции",
+    "contacts": "Контакты",
+    "public_offer": "Публичная оферта",
+    "privacy_policy": "Политика конфиденциальности",
+    "free_information_course": "Бесплатный информационный курс",
+    "personal_consultation": "Персональная консультация по трудовой миграции"
+  }
+}
