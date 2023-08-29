@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import { useState } from 'react';
 import styles from './button.module.scss';
-import { ButtonProps } from './button.props';
+import { PaymentButtonProps } from './button.props';
 
-const PaymentButton = ({classname, children, apperance}: ButtonProps): JSX.Element => {
+const PaymentButton = ({classname, children, apperance}: PaymentButtonProps): JSX.Element => {
   const [isClicked, setIsClicked] = useState(false);
   const changeButtonState = (value: boolean) => {
     setIsClicked(value)

@@ -1,0 +1,45 @@
+@import "../../styles/variables";
+
+.input {
+  // position: relative;
+  &__text, &__tel {
+    width: 100%;
+    height: 78px;
+    border-radius: 15px 15px 0px 15px;
+    background-color: $white;
+    outline: none;
+    border: none;
+    box-shadow: $input-shadow;
+    padding-left: 40px;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    color: $text-black;
+
+    &::placeholder {
+      color: #C7D1CC;
+      font-size: 21px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+    }
+  }
+
+  &__tel {
+    padding-left: 100px;
+  }
+
+  &__checkbox {
+    width: 21px;
+    height: 21px;
+    border-radius: 100px;
+  }
+}
+
+.error-message {
+  color: $error-input;
+  display: block;
+  position: absolute;
+  z-index: 2;
+}

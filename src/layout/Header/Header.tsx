@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
 import { useTranslation } from "next-i18next";
 import cn from "classnames";
 import PaymentButton from "@/components/PaymentButton/ButtonComponent";
@@ -13,13 +11,7 @@ const Header = ({
   classname,
   ...props
 }: HeaderProps): JSX.Element => {
-  const router = useRouter();
-  const pathname = usePathname();
   const { t } = useTranslation();
-
-  const changeLocalization = (local: string) => {
-    console.log(pathname);
-  };
 
   return (
     <header className={cn(styles["header"])}>
