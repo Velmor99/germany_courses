@@ -1,0 +1,78 @@
+@import "../../styles/variables";
+
+.container {
+  width: $desctop-width;
+  margin: 0 auto;
+}
+
+.pricing {
+  &__block {
+    width: 96.83%;
+    margin: 0 auto;
+    display: flex;
+    max-height: 200px;
+    position: relative;
+    margin-bottom: 100px;
+  }
+
+  &__title {
+    color: $text-black;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100px;
+
+    &-block {
+      background-color: $yellow-payment;
+      border-radius: 25px 25px 0px 25px;
+      width: 78%;
+      height: 142px;
+      padding: 21px 0 21px 54px;
+      display: inline-block;
+    }
+  }
+
+  &__price {
+    color: $text-black;
+    font-size: 300px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &-block {
+      position: absolute;
+      display: inline-block;
+      top: -140px;
+      right: 80px;
+      z-index: 9;
+    }
+  }
+
+  &__thing {
+    position: absolute;
+    top: 210px;
+    right: -13%;
+  }
+
+  &__per-lesson {
+    &-block {
+      position: absolute;
+      border-radius: 15px 15px 0px 15px;
+      background: $white;
+      box-shadow: $header-shadow;
+      padding: 24px 107px;
+      transform: translate(-50%, -50%);
+      top: 174px;
+      left: 34%;
+      z-index: 8;
+    }
+    &-text {
+      color: $main-green;
+      text-align: center;
+      font-size: 45px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+}
