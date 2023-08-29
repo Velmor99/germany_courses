@@ -1,0 +1,11 @@
+@import "../../styles/variables";
+
+.green {
+  background-color: $main-green;
+  color: $white;
+}
+
+.white {
+  background-color: $white;
+  color: $main-green;
+}

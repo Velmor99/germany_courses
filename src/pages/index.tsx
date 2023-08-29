@@ -1,11 +1,14 @@
-import { useTranslation } from "next-i18next";
+import { withLayout } from "@/layout/Layout";
+import MainPageComponent from "@/page-components/MainPage/MainPage";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { withLayout } from "../layout/Layout";
+
 
 const MainPage = () => {
-  const { t } = useTranslation();
-
-  return <div></div>;
+  return (
+  <>
+    <MainPageComponent />
+  </>
+  );
 };
 
 export const getServerSideProps = async (context: any) => {

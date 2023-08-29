@@ -44,6 +44,11 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    &:hover {
+      color: $main-green;
+      text-shadow: $footer-links-shadow;
+      transition: linear 250ms color;
+    }
   }
 
   &__contacts-link {

@@ -2,9 +2,9 @@ import { withLayout } from "@/layout/Layout"
 
 const Documents = () => {
   return (
-    <section>
+    <>
 
-    </section>
+    </>
   )
 }
 

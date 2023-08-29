@@ -3,5 +3,7 @@ module.exports = {
   i18n: {
     locales: ['en', 'de', 'ru', 'ua'],
     defaultLocale: 'ru',
+    localeDetection: true,
   },
+  trailingSlash: true,
 };

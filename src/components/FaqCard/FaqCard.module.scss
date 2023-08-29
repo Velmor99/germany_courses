@@ -1,0 +1,47 @@
+@import "../../styles/variables";
+
+.card {
+  position: relative;
+  &__title-block {
+    background-color: $main-green;
+    box-shadow: $header-shadow;
+    border-radius: 15px 15px 0px 15px;
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 20px 24px 30px;
+    z-index: 2;
+    position: relative;
+  }
+
+  &__title {
+    color: $white;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__button {
+    display: block;
+    padding: 6px 0 0;
+    background-color: $main-green;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__content-block {
+    position: relative;
+    top: -18px;
+    z-index: 1;
+    border-radius: 15px 15px 0 15px;
+    background: $white;
+    box-shadow: $header-shadow;
+    padding: 36px 40px 18px;
+    min-height: 100px;
+  }
+
+  &__content {
+    white-space: pre-line;
+  }
+}
