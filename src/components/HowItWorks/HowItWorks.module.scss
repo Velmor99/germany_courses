@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+
+.container {
+  width: $desctop-width;
+  margin: 0 auto;
+}
+
+.how-it-works {
+  &__title-block {
+    width: 100%;
+    background-color: $main-green;
+    border-radius: 25px 25px 0px 25px;
+    padding: 35px 0;
+  }
+
+  &__title {
+    text-align: center;
+    color: $white;
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__list {
+    width: 68%;
+    margin: 0 auto;
+  }
+}
