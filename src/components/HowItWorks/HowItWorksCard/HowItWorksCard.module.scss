@@ -1,0 +1,41 @@
+@import "../../../styles/variables";
+
+.card {
+  display: flex;
+
+  &__order {
+    color: $main-green;
+    font-size: 100px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    &-block {
+      margin-right: 17px;
+    }
+  }
+
+  &__text-block {
+    display: grid;
+  }
+
+  &__content-block {
+    align-self: center;
+  }
+
+  &__strong {
+    color: $text-black;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+  }
+
+  &__text {
+    color: $text-black;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}

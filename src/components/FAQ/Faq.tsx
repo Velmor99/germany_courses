@@ -1,17 +1,19 @@
 import { useTranslation } from "next-i18next";
 import cn from "classnames";
 import styles from "./Faq.module.scss";
-import FaqCard from "../FaqCard/FaqCard";
+import FaqCard from "./FaqCard/FaqCard";
 import { FaqProps } from "./Faq.props";
-import data from "../../../public/locales/de/common.json";
+import data from "@/../public/locales/de/common.json";
 import { useEffect, useState } from "react";
+import { IFormatedData } from "@/interfaces";
 
 const FAQ = ({ faqType }: FaqProps): JSX.Element => {
   const { t } = useTranslation();
-  const [faqData, setFaqData] = useState<{ title: string; content: string } | []>([]);
+  const [faqData, setFaqData] = useState<IFormatedData[]>([]);
 
   useEffect(() => {
-    setFaqData(createFormatedData());
+    const formated: IFormatedData[] = [...createFormatedData()]
+    setFaqData(formated);
   }, []);
 
   const createFormatedData = (): {title: string, content: string}[] | [] => {
@@ -23,9 +25,6 @@ const FAQ = ({ faqType }: FaqProps): JSX.Element => {
       })
     })
   };
-
-  console.log(createFormatedData())
-  // console.log('lorem: ', t(`${faqType}[0].content`))
 
   return (
     <div className={cn(styles["faq"])}>

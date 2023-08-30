@@ -1,6 +1,6 @@
 import styles from "./FaqCard.module.scss";
 import cn from "classnames";
-import ArrowIcon from "../../../public/common/arrow.svg";
+import ArrowIcon from "@/../public/common/arrow.svg";
 import { FaqCardProps } from "./FaqCard.props";
 import { useState } from "react";
 
