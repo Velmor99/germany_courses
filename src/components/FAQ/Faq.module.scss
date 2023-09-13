@@ -1,8 +1,8 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .container {
-  width: $desctop-width;
-  margin: 0 auto;
+  @include container;
 }
 
 .faq {

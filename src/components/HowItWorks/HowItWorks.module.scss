@@ -1,8 +1,8 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .container {
-  width: $desctop-width;
-  margin: 0 auto;
+  @include container;
 }
 
 .how-it-works {
@@ -10,20 +10,46 @@
     width: 100%;
     background-color: $main-green;
     border-radius: 25px 25px 0px 25px;
-    padding: 35px 0;
+    padding: 20px 0;
+    margin-bottom: 37px;
+    @media (min-width: $wide-phone-width) {
+      padding: 38px 0;
+    }
   }
 
   &__title {
     text-align: center;
     color: $white;
-    font-size: 45px;
+    font-size: 30px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
+    @media (min-width: $tablet-width) {
+      font-size: 45px;
+    }
   }
 
   &__list {
-    width: 68%;
+    width: 100%;
     margin: 0 auto;
+    @media (min-width: $desktop-width) {
+      width: 68%;
+    }
+
+    &-item {
+      margin-bottom: 40px;
+      // @media (min-width: $tablet-width) {
+      //   margin-bottom: 40px;
+      // }
+      // @media (min-width: $unfolded-tablet-width) {
+      //   margin-bottom: 66px;
+      // }
+      // @media (min-width: $desktop-width) {
+      //   margin-bottom: 49px;
+      // }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 }

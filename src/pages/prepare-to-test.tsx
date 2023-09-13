@@ -1,10 +1,11 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { withLayout } from "@/layout/Layout"
+import PrepareToTestPage from "@/page-components/PrepareToTestPage/PrepareToTestPage";
 
 const PrepareToTest = () => {
   return (
     <>
-
+      <PrepareToTestPage />
     </>
   )
 }

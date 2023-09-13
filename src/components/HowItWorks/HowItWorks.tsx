@@ -8,6 +8,7 @@ import data from "@/../public/locales/de/common.json";
 const HowItWorks = ({ title, dataString }: HowItWorksProps) => {
   const { t } = useTranslation();
 
+  //TODO in anouther file
   const createFormatedData = (): { strong: string; text: string }[] | [] => {
     const elements = Object.keys(data[`${dataString}`]);
     const targetData = data[`${dataString}`][1];

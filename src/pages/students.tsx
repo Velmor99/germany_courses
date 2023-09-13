@@ -1,11 +1,11 @@
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { withLayout } from "@/layout/Layout"
+import StudentsPage from "@/page-components/StudentsPage/StudentsPage";
 
-const Students = ({locale}) => {
-  console.log(locale)
+const Students = () => {
   return (
     <>
-
+      <StudentsPage />
     </>
   )
 }

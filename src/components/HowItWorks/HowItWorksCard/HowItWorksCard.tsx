@@ -10,8 +10,10 @@ const HowItWorksCard = ({strong, text, order}: HowItWorksCardProps) => {
       </div>
       <div className={cn(styles["card__text-block"])}>
         <p className={cn(styles["card__content-block"])}>
-          <strong className={cn(styles["card__strong"])}>{`${strong} `}</strong>
-          <span className={cn(styles["card__text"])}>{text}</span>
+          <span className={cn(styles["card__strong"])}>{`${strong} `}</span>
+          <span className={cn(styles["card__text"], {
+            [styles["card__non-text"]]: text.length === 0
+          })}>{text}</span>
         </p>
       </div>
     </div>

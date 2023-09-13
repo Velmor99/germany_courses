@@ -1,0 +1,99 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.container {
+  @include container;
+}
+
+.banner {
+  // height: 700px;
+
+  &__content {
+    position: relative;
+  }
+
+  &__background {
+    background-color: $yellow-payment;
+    width: 320px;
+    height: 300px;
+    border-radius: 20px;
+    @media (min-width: $wide-phone-width) {
+      width: 440px;
+      height: 450px;
+    }
+    @media (min-width: $tablet-width) {
+      width: 728px;
+      height: 450px;
+    }
+    @media (min-width: $unfolded-tablet-width) {
+      display: none;
+    }
+  }
+
+  &__background-desktop {
+    @media (min-width: $unfolded-tablet-width) {
+      background: $yellow-payment;
+      
+      height: 700px;
+      position: relative;
+      // padding-top: 126px;
+    }
+  }
+
+  &__gradient {
+    @media (min-width: $unfolded-tablet-width) {
+      background: linear-gradient(90deg, #FFF 39.58%, rgba(255, 255, 255, 0.00) 70.31%);
+      height: 100%;
+      padding-top: 126px;
+    }
+    @media (min-width: $desktop-width) {
+      padding-top: 166px;
+    }
+  }
+
+  &__mobile-green-block {
+    width: 100%;
+    background-color: $main-green;
+    padding: 21px 0;
+    @media (min-width: $tablet-width) {
+      padding: 0 0 0 20px;
+      background-color: $white;
+      text-align: left;
+      color: $main-green;
+      width: $tablet-width;
+      margin: 0 auto;
+      position: relative;
+      top: -44px;
+    }
+    @media (min-width: $unfolded-tablet-width) {
+      display: none;
+    }
+  }
+
+  &__inner-content {
+    position: relative;
+    top: -30px;
+    @media (min-width: $wide-phone-width) {
+      top: -50px;
+    }
+    @media (min-width: $unfolded-tablet-width) {
+      position: static;
+    }
+  }
+
+  &__mobile-green-text {
+    color: $white;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    width: 360px;
+    margin: 0 auto;
+    @media (min-width: $tablet-width) {
+      width: auto;
+      text-align: left;
+      color: $main-green;
+    }
+  }
+}
