@@ -7,14 +7,15 @@ export const routes = {
   prepareToTest: "/prepare-to-test",
   consultation: "/consultation",
   localization: {
-    en: "en",
-    de: "de",
-    ua: "ua",
-    ru: "ru"
+    en: {route: "en", title: "english"},
+    de: {route: "de", title: "deutsch"},
+    ua: {route: "ua", title: "українська"},
+    ru: {route: "ru", title: "русский"}
   },
   publicOffer: "/public-offer",
   privacyPolicy: "/privacy-policy",
-  freeCourse: "/"
+  freeCourse: "/",
+  languageSchool: "/"
 }
 
 export const links = {

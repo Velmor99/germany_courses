@@ -1,6 +1,8 @@
-const FIRST_PLACE_FLAGS = ["UA", "DE", "US", "RU"];
+import { CountryCode } from "libphonenumber-js";
 
-export const filterCountriesFlag = (listOfFlags: string[]) => {
+const FIRST_PLACE_FLAGS: string[] = ["UA", "DE", "US", "RU"];
+
+export const filterCountriesFlag = (listOfFlags: string[]): string[] => {
   const copy = [...listOfFlags];
   copy.forEach((flag, idx) => {
     for(let i = 0; i <= FIRST_PLACE_FLAGS.length; i++) {

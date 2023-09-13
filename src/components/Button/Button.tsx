@@ -3,9 +3,9 @@ import cn from 'classnames';
 import styles from './Button.module.scss';
 
 
-const ButtonComponent = ({children, className, buttonType, ...props}: ButtonProps) => {
+const ButtonComponent = ({children, className, buttonType, onSubmit, ...props}: ButtonProps) => {
   return (
-    <button className={cn(styles["button"], className, {
+    <button onSubmit={onSubmit} className={cn(styles["button"], className, {
       [styles["green"]]: buttonType === "green",
       [styles["white"]]: buttonType === "white"
     })}

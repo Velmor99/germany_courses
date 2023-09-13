@@ -3,15 +3,41 @@
 .localization {
   position: relative;
 
-  &__current, &__link {
-    font-size: 30px;
+  &__current,
+  &__link {
+    color: $text-black;
+    text-transform: capitalize;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    color: $text-black;
-    text-transform: capitalize;
     cursor: pointer;
-    width: 34px;
+    @media (min-width: $desktop-width) {
+      font-size: 30px;
+    }
+  }
+
+  &__current {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    margin-right: 8px;
+    &-language-icon {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      margin-right: 17px;
+    }
+    &-arrow-icon {
+      display: grid;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__current-block {
+    display: flex;
+    justify-content: flex-end;
   }
 
   &__list {
