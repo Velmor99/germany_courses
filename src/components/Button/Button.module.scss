@@ -1,5 +1,9 @@
 @import "../../styles/variables";
 
+.button {
+  cursor: pointer;
+}
+
 .green {
   background-color: $main-green;
   color: $white;

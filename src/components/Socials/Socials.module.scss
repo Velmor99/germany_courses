@@ -1,13 +1,11 @@
 .socials {
   &__list {
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 0 20px;
 
     &-item {
-      margin-right: 20px;
-      &:last-child {
-        margin-right: 0;
-      }
+      padding-top: 6px;
     }
   }
 

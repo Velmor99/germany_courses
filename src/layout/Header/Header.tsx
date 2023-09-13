@@ -6,34 +6,47 @@ import styles from "./Header.module.scss";
 import LogoComponent from "@/components/Logo/Logo";
 import Socials from "@/components/Socials/Socials";
 import LocalizationMenu from "@/components/LocalizationMenu/LocalizationMenu";
+import BurgerButton from "../Burger/BurgerMenuButton/BurgerMenuButton";
 
-const Header = ({
+export default function Header({
   classname,
+  isShowedBurger,
+  setBurgerMenu,
   ...props
-}: HeaderProps): JSX.Element => {
+}: HeaderProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <header className={cn(styles["header"])}>
       <div className={cn(styles["container"])}>
         <div className={cn(styles["header__content"])}>
-
           <div className={cn(styles["header__logo-container"])}>
             <LogoComponent logoType="black" />
           </div>
 
-          <PaymentButton apperance="payment" classname={cn(styles["header__payment-button"])}>
+          <div className={cn(styles["header__burger"])}>
+            <BurgerButton
+              changeMenu={setBurgerMenu}
+              isShowed={isShowedBurger}
+            />
+          </div>
+
+          <PaymentButton
+            apperance="payment"
+            classname={cn(styles["header__payment-button"])}
+          >
             {t("payment_button")}
           </PaymentButton>
 
           <div className={cn(styles["header__socials"])}>
             <Socials iconsType="black" />
+          </div>
+
+          <div className={cn(styles["header__localization-block"])}>
             <LocalizationMenu classname={cn(styles["header__localization"])} />
           </div>
         </div>
       </div>
     </header>
   );
-};
-
-export default Header;
+}
