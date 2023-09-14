@@ -30,7 +30,7 @@ const FAQ = ({ faqType }: FaqProps): JSX.Element => {
     <div className={cn(styles["faq"])}>
       <div className={cn(styles["container"])}>
         <div className={cn(styles["faq__content"])}>
-          <h2 className={cn(styles["faq__title"])}>{t("FAQ_title")}</h2>
+        <h2 className={cn(styles["faq__title"])}>{t("FAQ_title")}</h2>
           <ul className={cn(styles["faq__list"])}>
             {faqData.map((item, idx) => (
               <li key={idx} className={cn(styles["faq__list-item"])}>

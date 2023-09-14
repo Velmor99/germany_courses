@@ -5,6 +5,8 @@ import DeutchEducation from "@/components/DeutchEducation/DeutchEducation";
 import IndividualBanner from "@/components/IndividualBanner/IndividualBanner";
 import AdvantagesSpeakingClub from "@/components/AdvantagesSpeakingClub/AdvantagesSpeakingClub";
 import AdditionalServices from "@/components/AdditionalServices/AdditionalServices";
+import MainPricing from "@/components/MainPricing/MainPricing";
+import GreenContentBlock from "@/components/GreenContentBlock/GreenContentBlock";
 
 const MainPageComponent = () => {
   const { t } = useTranslation();
@@ -25,7 +27,13 @@ const MainPageComponent = () => {
         <AdditionalServices />
       </section>
       <section>
+        <GreenContentBlock revers={true} content={"main_green_content"} />
+      </section>
+      <section>
         <DeutchEducation />
+      </section>
+      <section>
+        <MainPricing />
       </section>
       <section className={styles["main-page__background"]}>
         <FormComponent title={t("form.title_for_main")} styleType="green" />
