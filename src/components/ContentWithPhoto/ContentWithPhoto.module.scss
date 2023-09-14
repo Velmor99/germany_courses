@@ -1,0 +1,78 @@
+@import "../../styles/mixins";
+@import "../../styles/variables";
+
+.container {
+  @include container;
+}
+
+.content-with-photo {
+  &__content {
+    @media (min-width: $desktop-width) {
+      display: grid;
+      grid-template-columns: auto auto;
+      align-items: center;
+      gap: 0 50px;
+    }
+  }
+
+  &__image-block {
+    width: 320px;
+    height: 300px;
+    background-color: $yellow-payment;
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    @media (min-width: $wide-phone-width) {
+      width: 440px;
+      height: 374px;
+      margin-bottom: 30px;
+    }
+    @media (min-width: $tablet-width) {
+      width: 588px;
+      height: 374px;
+      margin-bottom: 47px;
+    }
+    @media (min-width: $desktop-width) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text-part-one {
+    color: $text-black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 40px;
+    @media (min-width: $wide-phone-width) {
+      width: 97%;
+      margin: 0 auto 40px;
+    }
+    @media (min-width: $tablet-width) {
+      font-size: 30px;
+      width: 673px;
+    }
+    @media (min-width: $desktop-width) {
+      width: auto;
+    }
+  }
+
+  &__text-part-two {
+    color: $text-black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    @media (min-width: $wide-phone-width) {
+      width: 97%;
+      margin: 0 auto;
+    }
+    @media (min-width: $tablet-width) {
+      font-size: 30px;
+      width: 673px;
+    }
+    @media (min-width: $desktop-width) {
+      width: auto;
+    }
+  }
+}

@@ -11,12 +11,12 @@
   "main": {
     "group": {
       "A1": {
-        "price_per_hour": 5,
+        "price_per_hour": 3,
         "duration": 112,
         "discount": 160
       },
       "A2": {
-        "price_per_hour": 5,
+        "price_per_hour": 4,
         "duration": 112,
         "discount": 160
       },
@@ -26,7 +26,7 @@
         "discount": 160
       },
       "B2": {
-        "price_per_hour": 5,
+        "price_per_hour": 6,
         "duration": 112,
         "discount": 160
       }
