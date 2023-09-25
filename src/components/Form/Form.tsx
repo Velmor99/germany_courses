@@ -10,7 +10,7 @@ import {
   FieldError,
 } from "react-hook-form";
 import { IForm, IFormResponse } from "./Form.interfaces";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { routes } from "../../../routes";
 import Link from "next/link";
 import ButtonComponent from "../Button/Button";
@@ -19,11 +19,15 @@ import { validatePhoneNumber } from "@/utils/validatePhoneNumber";
 import { CountryCode } from "libphonenumber-js";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { schema } from "@/utils/yupValidationForm";
-import LargeGreenWeIcon from "../../../public/common/form/large_green_we.svg";
-import LargeWhiteWeIcon from "../../../public/common/form/large_white_we.svg";
+import { useRouter } from "next/router";
+import { sendMail } from "../../service/mailgun";
 
 import PhoneInput from "react-phone-number-input";
 import FormWe from "./FormWe/FormWe";
+import SentFormNotification from "../SentFormNotification/SentFormNotification";
+import { MessagesSendResult } from "mailgun.js";
+import { motion } from "framer-motion";
+// import mailer from '../../utils/nodemailer';
 
 export const FormComponent = ({
   title,
@@ -41,43 +45,47 @@ export const FormComponent = ({
     resolver: yupResolver(schema),
   });
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [checkbox, setCheckbox] = useState<boolean>(false);
   const [error, setError] = useState<string>("");
   const [isPhoneCorrect, setIsPhoneCorrect] = useState<FieldError | null>(null);
   const [country, setCountry] = useState<string>("UA");
   const { t } = useTranslation();
+  const router = useRouter();
 
   const [value, setValue] = useState();
 
+  useEffect(() => {
+    console.log(checkbox)
+  }, [checkbox])
+
   const onSubmit: SubmitHandler<IForm> = async (formData: IForm) => {
-    console.log(formData);
     const validatedNumber = validatePhoneNumber(
       String(formData.phone),
       country as CountryCode
     );
-    console.log(validatedNumber);
+    // console.log(validatedNumber);
     if (!validatedNumber) {
       setIsPhoneCorrect({
         type: "validation",
         message: "incorrect phone number",
       });
+      return;
     } else {
       setIsPhoneCorrect(null);
     }
-    //   try {
-    //     const { data } = await axios.post<IReviewResponse>(process.env.NEXT_PUBLIC_DOMAIN + API.review.create, {...formData, productId});
-    //     if(data.message) {
-    //       setIsSuccess(true);
-    //       reset();
-    //     } else {
-    //       setError("Что-то пошло не так");
-    //     }
-    //   } catch (error) {
-    //     if(axios.isAxiosError(error)) {
-    //       setError(error.message);
-    //     } else {
-    //       console.log(error);
-    //     }
-    //   }
+    setLoading(true);
+
+    const res: MessagesSendResult = await sendMail({
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      country: country,
+      webpage: `${window.location.origin}${router.pathname}`,
+    });
+    if (res.status === 200) {
+      setIsSuccess(true);
+    }
   };
 
   const changeCountry = (country: string) => {
@@ -87,11 +95,12 @@ export const FormComponent = ({
 
   return (
     <div className={cn(styles["container"])}>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} id="form">
         <div
           className={cn(styles["form"], className, {
             [styles["form__green"]]: styleType === "green",
             [styles["form__white"]]: styleType === "white",
+            [styles["form__success"]]: isSuccess,
           })}
           {...props}
         >
@@ -138,6 +147,7 @@ export const FormComponent = ({
             <InputComponent
               className={styles["form__checkbox"]}
               type={"checkbox"}
+              onChange={() => setCheckbox(!checkbox)}
             />
             <p className={cn(styles["form__checkbox-text"])}>
               <span className={cn(styles["form__text"])}>{`${t(
@@ -170,36 +180,31 @@ export const FormComponent = ({
 
           <ButtonComponent
             type="submit"
+            disabled={!checkbox || loading}
             buttonType={styleType === "white" ? "green" : "white"}
             className={cn(styles["form__submit-button"])}
+            isLoading={loading}
           >
             {t("form.main_submit_button")}
           </ButtonComponent>
 
-          {/* <div className={styles.submit}>
-          <Button tabIndex={isOpened ? 0 : -1} appearance="primary">Отправить</Button>
-          <span className={styles.info}>* Перед публикацией отзыв пройдет предварительную модерацию и проверку</span>
-        </div> */}
-
-          <div className={styles["form__we-icon"]}>
+          <div className={cn(styles["form__we-icon"], {
+            [styles["form__we-icon-green"]]: styleType === "white"
+          })}>
             <FormWe iconStyle={styleType} />
           </div>
-
+          {isSuccess && (
+            <motion.div 
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ ease: "linear", duration: 0.25 }}
+            >
+              <SentFormNotification />
+            </motion.div>
+          )}
         </div>
-
-        {/* {isSuccess && (
-        <div className={styles.success}>
-          <div className={styles.successTitle}>Ваш отзыв отправлен</div>
-          <div>Спасибо, ваш отзыв будет опубликован после проверки</div>
-          <CloseIcon onClick={() => setIsSuccess(false)} className={styles.close} />
-        </div>
-      )}
-      {error && (
-        <div className={styles.error}>
-          {error}
-          <CloseIcon onClick={() => setError('')} className={styles.close} />
-        </div>
-      )} */}
       </form>
     </div>
   );

@@ -38,12 +38,8 @@
 
   &__list {
     width: 100%;
-    &-item {
-      width: 100%;
-      margin-bottom: 20px;
-      :last-of-type {
-        margin-bottom: 0;
-      }
-    }
+    display: grid;
+    grid-auto-flow: row;
+    gap: 20px 0;
   }
 }

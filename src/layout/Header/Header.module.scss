@@ -9,7 +9,7 @@
   box-shadow: $header-shadow;
   height: 80px;
   position: relative;
-  z-index: 1;
+  z-index: 5;
   @media (min-width: $tablet-width) {
     height: 100px;
   }
@@ -17,7 +17,7 @@
   &__content {
     display: grid;
     position: relative;
-    z-index: 1;
+    z-index: 5;
     align-items: center;
     height: 100%;
     grid-auto-flow: column;
@@ -39,7 +39,7 @@
   &__socials {
     display: none;
 
-    @media only screen and (min-width: 1280px) {
+    @media (min-width: $desktop-width) {
       display: flex;
       justify-self: center;
       grid-column: 4 / 5;

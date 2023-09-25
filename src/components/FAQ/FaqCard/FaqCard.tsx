@@ -24,13 +24,13 @@ const FaqCard = ({ title, innerContent }: FaqCardProps): JSX.Element => {
       <AnimatePresence>
         {isShowedInnerContent && (
           <motion.div
-          layout
-          initial={{  opacity: 0 }}
-          animate={{  opacity: 1 }}
-          exit={{  opacity: 0 }}
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             transition={{ ease: "linear", duration: 0.25 }}
             className={cn(styles["card__content-block"], {
-              [styles["card__content-block-active"]]: isShowedInnerContent
+              [styles["card__content-block-active"]]: isShowedInnerContent,
             })}
           >
             <p className={cn(styles["card__content"])}>{innerContent}</p>

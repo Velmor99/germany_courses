@@ -5,14 +5,20 @@ import Image from "next/image";
 import IndividualBannerTextContent from "./IndividualBannerTextContent/IndividualBannerTextContent";
 import { IndividualBannerProps } from "./IndividualBanner.props";
 
-const IndividualBanner = ({text, title, buttonText, where}: IndividualBannerProps
-  ) => {
+const IndividualBanner = ({
+  text,
+  title,
+  buttonText,
+  where,
+}: IndividualBannerProps) => {
   return (
     <div className={cn(styles["individual-banner"])}>
-      <div className={cn(styles["background-line"], {
-        [styles["background-line-main"]]: where === "main",
-        [styles["background-line-consultation"]]: where === "consultation"
-      })}>
+      <div
+        className={cn(styles["background-line"], {
+          [styles["background-line-main"]]: where === "main",
+          [styles["background-line-consultation"]]: where === "consultation",
+        })}
+      >
         <div className={cn(styles["container"])}>
           <div className={cn(styles["individual-banner__content"])}>
             <div className={cn(styles["individual-banner__main-image-block"])}>
@@ -36,7 +42,11 @@ const IndividualBanner = ({text, title, buttonText, where}: IndividualBannerProp
             </div>
 
             <div>
-                <IndividualBannerTextContent text={text} title={title} buttonText={buttonText} />
+              <IndividualBannerTextContent
+                text={text}
+                title={title}
+                buttonText={buttonText}
+              />
             </div>
           </div>
         </div>

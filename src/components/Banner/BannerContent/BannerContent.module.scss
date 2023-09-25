@@ -35,6 +35,8 @@
     font-weight: 700;
     line-height: normal;
     display: inline-block;
+    white-space: pre-line;
+    width: 100%;
     @media (min-width: $wide-phone-width) {
       margin-bottom: 30px;
     }

@@ -4,4 +4,5 @@ export interface ButtonProps extends Omit<DetailedHTMLProps<ButtonHTMLAttributes
   children: ReactNode;
   buttonType: "white" | "green";
   onSubmit?: () => void | null;
+  isLoading?: boolean;
 }

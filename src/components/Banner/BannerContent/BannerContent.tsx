@@ -10,13 +10,17 @@ const BannerContent = ({
   buttonText,
   className,
 }: BannerContentProps) => {
+  const scrollToForm = () => {
+    const form = document.getElementById("form")
+    form?.scrollIntoView({behavior: "smooth"})
+  }
   return (
     <div className={cn(styles["banner-content"], className)}>
       <h1 className={cn(styles["banner-content__title"])}>
         <span>
           <strong className={cn(styles["banner-content__strong"])}>
-            {strong}
-            <span className={cn(styles["banner-content__symbol"])}>- </span>
+            {strong + " "}
+            {/* <span className={cn(styles["banner-content__symbol"])}>- </span> */}
           </strong>
           <span className={cn(styles["banner-content__text"])}>{text}</span>
         </span>
@@ -25,9 +29,9 @@ const BannerContent = ({
         <p className={cn(styles["banner-content__greenText"])}>{greenText}</p>
       )}
       <ButtonComponent
+        onClick={() => scrollToForm()}
         className={cn(styles["banner-content__button"])}
-        buttonType="green"
-      >
+        buttonType="green">
         {buttonText}
       </ButtonComponent>
     </div>
