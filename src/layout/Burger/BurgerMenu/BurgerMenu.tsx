@@ -57,7 +57,7 @@ const BurgerMenu = ({ className, title }: BurgerMenuProps) => {
         </ul>
 
         <div className={cn(styles["burger-menu__localization-block"])}>
-          <LocalizationMenu />
+          <LocalizationMenu isInBurger={true} />
         </div>
 
         <div className={cn(styles["burger-menu__socials-block"])}>

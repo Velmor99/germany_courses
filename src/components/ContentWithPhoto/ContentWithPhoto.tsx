@@ -3,8 +3,9 @@ import styles from "./ContentWithPhoto.module.scss";
 import { useTranslation } from "next-i18next";
 import { ContentWithPhotoProps } from "./ContentWithPhoto.props";
 import MediumGreenWeIcon from "../../../public/common/medium_green_we.svg";
+import TextComponent from "../Text/Text";
 
-const ContentWithPhoto = ({ partOne, partTwo }: ContentWithPhotoProps) => {
+const ContentWithPhoto = ({ partOne, partTwo, partOneOptions, partTwoOptions }: ContentWithPhotoProps) => {
   const { t } = useTranslation();
   return (
     <div className={cn(styles["content-with-photo"])}>
@@ -19,10 +20,10 @@ const ContentWithPhoto = ({ partOne, partTwo }: ContentWithPhotoProps) => {
 
           <div>
             <p className={cn(styles["content-with-photo__text-part-one"])}>
-              {t(partOne)}
+              <TextComponent text={t(partOne)} targets={partOneOptions.targets} textColor={partOneOptions.colorText} fontWeight={partOneOptions.fontWeight} />
             </p>
             <p className={cn(styles["content-with-photo__text-part-two"])}>
-              {t(partTwo)}
+            <TextComponent text={t(partTwo)} targets={partTwoOptions.targets} textColor={partTwoOptions.colorText} fontWeight={partTwoOptions.fontWeight} />
             </p>
           </div>
         </div>

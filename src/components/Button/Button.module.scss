@@ -2,6 +2,12 @@
 
 .button {
   cursor: pointer;
+  &:active {
+    box-shadow: 0px 0px 9px 0px rgba(14, 62, 39, 0.15) inset,
+    0px 0px 16px 0px rgba(14, 62, 39, 0.1) inset;
+  background: #fff;
+  color: $main-green;
+  }
 }
 
 .green {
@@ -12,4 +18,14 @@
 .white {
   background-color: $white;
   color: $main-green;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  @media (min-width: $wide-phone-width) {
+    width: 55px;
+    height: 55px;
+  }
 }

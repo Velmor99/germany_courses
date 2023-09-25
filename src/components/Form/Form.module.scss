@@ -16,17 +16,16 @@
     padding: 85px 40px;
     border-radius: 50px;
   }
-
-  // padding: 85px 120px;
-  // border-radius: 50px;
-  // position: relative;
-
+  @media (min-width: $desktop-width) {
+    padding: 85px 109px;
+  }
 
   &__green {
     background: $main-green;
   }
 
   &__white {
+    background-color: $white;
     box-shadow: $white-form-shadow;
   }
 
@@ -86,6 +85,9 @@
   &__checkbox {
     position: absolute;
     left: 4%;
+    @media (min-width: $wide-phone-width) {
+      left: 18%;
+    }
     @media (min-width: $tablet-width) {
       top: 2px;
       left: 13%;
@@ -95,6 +97,7 @@
   &__checkbox-text {
     text-align: center;
     margin-bottom: 45px;
+    margin: 0 auto 45px auto;
   }
 
   &__link {
@@ -149,21 +152,26 @@
 
   &__we-icon {
     position: absolute;
-    top: -94px;
+    top: -38px;
     transform: translate(-50%);
     left: 50%;
-    z-index: 3;
+    z-index: 9999;
     @media (min-width: $tablet-width) {
-      top: -84px;
+      top: -64px;
     }
     @media (min-width: $unfolded-tablet-width) {
       top: -80px;
     }
     @media (min-width: $desktop-width) {
       top: 750px;
-      left: 1020px;
+      left: 999px;
       rotate: 15deg;
     }
+    // &-green {
+    //   @media (min-width: $desktop-width) {
+    //     top: 850px;
+    //   }
+    // }
   }
 
   &__phone-input {
@@ -172,7 +180,7 @@
 
   &__select {
     position: absolute;
-    z-index: 3;
+    z-index: 4;
     top: 17px;
     left: 10px;
     @media (min-width: $wide-phone-width) {

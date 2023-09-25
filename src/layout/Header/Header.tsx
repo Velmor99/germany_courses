@@ -7,6 +7,10 @@ import LogoComponent from "@/components/Logo/Logo";
 import Socials from "@/components/Socials/Socials";
 import LocalizationMenu from "@/components/LocalizationMenu/LocalizationMenu";
 import BurgerButton from "../Burger/BurgerMenuButton/BurgerMenuButton";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
+import { routes } from "../../../routes";
 
 export default function Header({
   classname,
@@ -15,6 +19,8 @@ export default function Header({
   ...props
 }: HeaderProps): JSX.Element {
   const { t } = useTranslation();
+  const pathname = usePathname();
+  const router = useRouter();
 
   return (
     <header className={cn(styles["header"])}>
@@ -43,7 +49,8 @@ export default function Header({
           </div>
 
           <div className={cn(styles["header__localization-block"])}>
-            <LocalizationMenu classname={cn(styles["header__localization"])} />
+            <LocalizationMenu classname={cn(styles["header__localization"])} isInBurger={false} />
+            
           </div>
         </div>
       </div>

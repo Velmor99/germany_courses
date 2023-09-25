@@ -1,4 +1,3 @@
-import { useTranslation } from "next-i18next";
 import { FormComponent } from "@/components/Form/Form";
 import styles from "./MainPage.module.scss";
 import DeutchEducation from "@/components/DeutchEducation/DeutchEducation";
@@ -7,12 +6,12 @@ import AdvantagesSpeakingClub from "@/components/AdvantagesSpeakingClub/Advantag
 import AdditionalServices from "@/components/AdditionalServices/AdditionalServices";
 import MainPricing from "@/components/MainPricing/MainPricing";
 import GreenContentBlock from "@/components/GreenContentBlock/GreenContentBlock";
+import MainAdditionalServices from "@/components/MainAdditionalServices/MainAdditionalServices";
 
 const MainPageComponent = () => {
-  const { t } = useTranslation();
   return (
     <>
-      <section>
+      <section className={styles["main-page__banner-section"]}>
         <IndividualBanner
           title="main_banner_title"
           text="main_banner_text"
@@ -20,23 +19,34 @@ const MainPageComponent = () => {
           where="main"
         />
       </section>
-      <section>
+      <section className={styles["main-page__advantages-section"]}>
         <AdvantagesSpeakingClub where="main" />
       </section>
-      <section>
+      <section className={styles["main-page__additional-services-section"]}>
         <AdditionalServices />
       </section>
-      <section>
-        <GreenContentBlock revers={true} content={"main_green_content"} />
+      <section className={styles["main-page__green-content-section"]}>
+        <GreenContentBlock revers={true} content={"main_green_content"} optionsForTextWithPhoto={{
+          targets: ["Welingua"],
+          fontWeight: 700,
+          colorText: "green"
+        }} optionsForTextBelowPhoto={{
+          targets: ["не ограничиваются", "учебниками"],
+          fontWeight: 700,
+          colorText: "white"
+        }} />
       </section>
-      <section>
+      <section className={styles["main-page__deutch-education-section"]}>
         <DeutchEducation />
       </section>
-      <section>
+      <section className={styles["main-page__pricing-section"]}>
         <MainPricing />
       </section>
-      <section className={styles["main-page__background"]}>
-        <FormComponent title={t("form.title_for_main")} styleType="green" />
+      <section className={styles["main-page__form-section"]}>
+        <FormComponent title={"form.title_for_main"} styleType="green" />
+      </section>
+      <section className={styles["main-page__additional-section"]}>
+        <MainAdditionalServices />
       </section>
     </>
   );
