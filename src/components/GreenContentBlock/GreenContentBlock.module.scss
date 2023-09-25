@@ -6,12 +6,6 @@
 }
 
 .green-content {
-  //TODO remove margin
-  margin-top: 20px;
-  &__green-square-background {
-    background-color: $main-green;
-  }
-
   &__text-with-photo-block {
     margin-bottom: 30px;
     position: relative;
@@ -81,6 +75,7 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    white-space: pre-line;
     @media (min-width: $wide-phone-width) {
       font-size: 18px;
     }
@@ -101,7 +96,7 @@
   &__image-block {
     width: 320px;
     height: 300px;
-    background-color: $yellow-payment;
+    // background-color: $yellow-payment;
     border-radius: 20px;
     box-shadow: $header-shadow;
     margin: 0 auto;
@@ -115,4 +110,58 @@
       height: 374px;
     }
   }
+
+  // &__main-background {
+  //   background-image: url("../../../public/backgrounds/green-text/main/mobile.png");
+  //   background-position: center bottom;
+  //   background-repeat: no-repeat;
+  // }
+}
+
+.main-image {
+  background-image: url("../../../public/images/main/1_iStock-1288103838.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.consultation-image {
+  background-image: url("../../../public/images/students/10_iStock-1126400335.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.documents-image {
+  background-image: url("../../../public/images/documents/2_iStock-827804170.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.prepare-to-test-image {
+  background-image: url("../../../public/images/prepare-to-test/2_iStock-1288092444_Red.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.resume-image {
+  background-image: url("../../../public/images/resume/2_iStock-587892248.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.resume-image-desktop {
+  background-image: url("../../../public/images/resume/2_iStock-587892248.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.speaking-club-image {
+  background-image: url("../../../public/images/speaking-club/2_iStock-1264709816.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.students-image {
+  background-image: url("../../../public/images/students/2_iStock-1308970663.jpg");
+  background-size: cover;
+  background-position: center;
 }

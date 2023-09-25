@@ -7,9 +7,9 @@ export const routes = {
   prepareToTest: "/prepare-to-test",
   consultation: "/consultation",
   localization: {
-    en: {route: "en", title: "english"},
+    // en: {route: "en", title: "english"},
     de: {route: "de", title: "deutsch"},
-    ua: {route: "ua", title: "українська"},
+    // ua: {route: "ua", title: "українська"},
     ru: {route: "ru", title: "русский"}
   },
   publicOffer: "/public-offer",

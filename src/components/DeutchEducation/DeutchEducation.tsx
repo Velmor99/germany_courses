@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import styles from './DeutchEducation.module.scss';
 import { useTranslation } from "next-i18next";
+import TextComponent from '../Text/Text';
 
 const DeutchEducation = () => {
   const {t} = useTranslation();
@@ -28,7 +29,7 @@ const DeutchEducation = () => {
           </div>
         </div>
 
-        <p className={cn(styles["deutch__text"])}>{t("deutch_education_part_one")}</p>
+        <p className={cn(styles["deutch__text"])}><TextComponent text={t("deutch_education_part_one")} targets={["Welingua"]} textColor={'green'} fontWeight={700} /></p>
         <p className={cn(styles["deutch__text"])}>{t("deutch_education_part_two")}</p>
       </div>
     </div>

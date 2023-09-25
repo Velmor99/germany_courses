@@ -9,6 +9,10 @@ const IndividualBannerTextContent = ({
   text,
   buttonText,
 }: IndividualBannerTextContentProps) => {
+  const scrollToForm = () => {
+    const form = document.getElementById("form");
+    form?.scrollIntoView({ behavior: "smooth" });
+  };
   const { t } = useTranslation();
   return (
     <div className={cn(styles["banner-content"])}>
@@ -16,6 +20,7 @@ const IndividualBannerTextContent = ({
         <h2 className={cn(styles["banner-content__title"])}>{t(title)}</h2>
         <p className={cn(styles["banner-content__text"])}>{t(text)}</p>
         <ButtonComponent
+          onClick={() => scrollToForm()}
           className={cn(styles["banner-content__button"])}
           buttonType="green"
         >

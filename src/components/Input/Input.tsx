@@ -12,7 +12,7 @@ export const InputComponent = forwardRef(({type, className, error, ...props }: I
 				[styles["input__checkbox"]]: type === "checkbox",
 				[styles["error"]]: error
 			})} ref={ref} {...props} />
-			{error && <span role="alert" className={styles["error-message"]}>{error.message}</span>}
+			{error && <span className={styles["error-message"]}>{error.message}</span>}
 		</div>
 	);
 });
