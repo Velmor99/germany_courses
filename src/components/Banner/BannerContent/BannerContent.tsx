@@ -12,9 +12,9 @@ const BannerContent = ({
   className,
 }: BannerContentProps) => {
   const scrollToForm = () => {
-    const form = document.getElementById("form")
-    form?.scrollIntoView({behavior: "smooth"})
-  }
+    const form = document.getElementById("form");
+    form?.scrollIntoView({ behavior: "smooth" });
+  };
   return (
     <div className={cn(styles["banner-content"], className)}>
       <h1 className={cn(styles["banner-content__title"])}>
@@ -32,7 +32,8 @@ const BannerContent = ({
       <ButtonComponent
         onClick={() => scrollToForm()}
         className={cn(styles["banner-content__button"])}
-        buttonType="green">
+        buttonType="green"
+      >
         {buttonText}
       </ButtonComponent>
     </div>
