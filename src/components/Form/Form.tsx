@@ -55,16 +55,11 @@ export const FormComponent = ({
 
   const [value, setValue] = useState();
 
-  useEffect(() => {
-    console.log(checkbox)
-  }, [checkbox])
-
   const onSubmit: SubmitHandler<IForm> = async (formData: IForm) => {
     const validatedNumber = validatePhoneNumber(
       String(formData.phone),
       country as CountryCode
     );
-    // console.log(validatedNumber);
     if (!validatedNumber) {
       setIsPhoneCorrect({
         type: "validation",
@@ -90,7 +85,6 @@ export const FormComponent = ({
 
   const changeCountry = (country: string) => {
     setCountry(country);
-    console.log(country);
   };
 
   return (

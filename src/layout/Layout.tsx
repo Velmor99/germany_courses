@@ -6,9 +6,12 @@ import cn from "classnames";
 import styles from "./Layout.module.scss";
 import BurgerMenu from "./Burger/BurgerMenu/BurgerMenu";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   const [showedBurgerMenu, setShowedBurgerMenu] = useState(false);
+  const router = useRouter()
+  console.log(router.locale)
 
   const changeShowBurgerMenu = () => {
     //TODO this is bad but I have no choise

@@ -3,7 +3,6 @@ import styles from './Text.module.scss';
 import cn from 'classnames';
 
 const TextComponent = ({text, targets, textColor, fontWeight}: TextComponentProps) => {
-  console.log(fontWeight)
   const wrapWords = () => {
     const arr = text.split(" ")
     const result: Array<string | {target: string}> = arr.map((item: string | {target: string}) => {
@@ -14,7 +13,7 @@ const TextComponent = ({text, targets, textColor, fontWeight}: TextComponentProp
       })
       return item;
     })
-    console.log(result)
+    
     return (
       <span>
         {result.map(item => {
