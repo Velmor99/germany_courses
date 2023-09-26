@@ -11,7 +11,6 @@ const AdditionalServices = () => {
   return (
     <div className={cn(styles["services"])}>
       <div className={cn(styles["container"])}>
-
         <div className={cn(styles["services__title-block"])}>
           <h2>
             <span className={cn(styles["services__white-title"])}>
@@ -25,26 +24,58 @@ const AdditionalServices = () => {
         </div>
 
         <div className={cn(styles["services__services-list"])}>
-          <div className={cn(styles["services__list-item"], styles["services__resume"])}>
+          <div
+            className={cn(
+              styles["services__list-item"],
+              styles["services__resume"]
+            )}
+          >
             <div className={cn(styles["services__image-block"])}>
-              <Image className={cn(styles["services__image"])} src={ResumeImage} alt="writing a resume" />
+              <Image
+                className={cn(styles["services__image"])}
+                src={ResumeImage}
+                alt="writing a resume"
+              />
             </div>
-            <p className={cn(styles["services__list-item-text"])}>{t("additional_services_items.resume")}</p>
+            <p className={cn(styles["services__list-item-text"])}>
+              {t("additional_services_items.resume")}
+            </p>
           </div>
-          <div className={cn(styles["services__list-item"], styles["services__translations"])}>
+          <div
+            className={cn(
+              styles["services__list-item"],
+              styles["services__translations"]
+            )}
+          >
             <div className={cn(styles["services__image-block"])}>
-              <Image className={cn(styles["services__image"])} src={TranslateImage} alt="translate documents" />
+              <Image
+                className={cn(styles["services__image"])}
+                src={TranslateImage}
+                alt="translate documents"
+              />
             </div>
-            <p className={cn(styles["services__list-item-text"])}>{t("additional_services_items.translations")}</p>
+            <p className={cn(styles["services__list-item-text"])}>
+              {t("additional_services_items.translations")}
+            </p>
           </div>
-          <div className={cn(styles["services__list-item"], styles["services__consultation"])}>
+          <div
+            className={cn(
+              styles["services__list-item"],
+              styles["services__consultation"]
+            )}
+          >
             <div className={cn(styles["services__image-block"])}>
-              <Image className={cn(styles["services__image"])} src={ConsultationImage} alt="consultation" />
+              <Image
+                className={cn(styles["services__image"])}
+                src={ConsultationImage}
+                alt="consultation"
+              />
             </div>
-            <p className={cn(styles["services__list-item-text"])}>{t("additional_services_items.consultations")}</p>
+            <p className={cn(styles["services__list-item-text"])}>
+              {t("additional_services_items.consultations")}
+            </p>
           </div>
         </div>
-
       </div>
     </div>
   );
