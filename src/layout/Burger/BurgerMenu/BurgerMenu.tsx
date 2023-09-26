@@ -10,7 +10,7 @@ import PhoneContact from "@/components/PhoneContact/PhoneContact";
 import EmailContact from "@/components/EmailContact/EmailContact";
 import LocalizationMenu from "@/components/LocalizationMenu/LocalizationMenu";
 
-const BurgerMenu = ({ className, title }: BurgerMenuProps) => {
+const BurgerMenu = ({ className, setBurgerMenu, title }: BurgerMenuProps) => {
   const {t} = useTranslation();
   return (
     <nav className={cn(styles["burger-menu"], className)}>
@@ -21,7 +21,7 @@ const BurgerMenu = ({ className, title }: BurgerMenuProps) => {
             <ArrowIcon />
           </div>
         </div>
-        <ul className={cn(styles["burger-menu__list-of-links"])}>
+        <ul onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__list-of-links"])}>
           <li className={cn(styles["burger-menu__list-item"])}>
             <Link className={cn(styles["burger-menu__link"])} href={routes.languageSchool}>{t("footer_links.language_school")}</Link>
           </li>
@@ -47,7 +47,7 @@ const BurgerMenu = ({ className, title }: BurgerMenuProps) => {
             <Link className={cn(styles["burger-menu__link"])} href={routes.documents}>{t("footer_links.preparing_documents")}</Link>
           </li>
         </ul>
-        <ul className={cn(styles["burger-menu__list-of-documents"])}>
+        <ul onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__list-of-documents"])}>
           <li>
             <Link className={cn(styles["burger-menu__link"])} href="/">Публичная оферта</Link>
           </li>
@@ -56,19 +56,19 @@ const BurgerMenu = ({ className, title }: BurgerMenuProps) => {
           </li>
         </ul>
 
-        <div className={cn(styles["burger-menu__localization-block"])}>
+        <div onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__localization-block"])}>
           <LocalizationMenu isInBurger={true} />
         </div>
 
-        <div className={cn(styles["burger-menu__socials-block"])}>
+        <div onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__socials-block"])}>
           <Socials iconsType="black" />
         </div>
 
-        <div className={cn(styles["burger-menu__phone-block"])}>
+        <div onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__phone-block"])}>
           <PhoneContact styleType="black" />
         </div>
 
-        <div className={cn(styles["burger-menu__email-block"])}>
+        <div onClick={() => setBurgerMenu()} className={cn(styles["burger-menu__email-block"])}>
           <EmailContact styleType="black" />
         </div>
 

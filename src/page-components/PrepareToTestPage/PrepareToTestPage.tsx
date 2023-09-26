@@ -43,8 +43,11 @@ const PrepareToTestPage = () => {
       <section className={styles["prepare__how-it-works-section"]}>
         <HowItWorks
           title="how_it_works"
-          dataString="prepare_to_test_how_it_works"
-        />
+          dataString="prepare_to_test_how_it_works" textOptions={{
+            targets: [],
+            fontWeight: 0,
+            colorText: "green"
+          }}        />
       </section>
       <section className={styles["prepare__pricing-section"]}>
         <PrepareToTestPricing />

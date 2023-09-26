@@ -6,6 +6,7 @@ import { FaqProps } from "./Faq.props";
 import data from "@/../public/locales/de/common.json";
 import { useEffect, useState } from "react";
 import { IFormatedData } from "@/interfaces";
+import { motion } from "framer-motion";
 
 const FAQ = ({ faqType }: FaqProps): JSX.Element => {
   const { t } = useTranslation();
@@ -33,9 +34,9 @@ const FAQ = ({ faqType }: FaqProps): JSX.Element => {
         <h2 className={cn(styles["faq__title"])}>{t("FAQ_title")}</h2>
           <ul className={cn(styles["faq__list"])}>
             {faqData.map((item, idx) => (
-              <li key={idx} className={cn(styles["faq__list-item"])}>
+              <motion.li layout key={idx} className={cn(styles["faq__list-item"])}>
                 <FaqCard title={item.title} innerContent={item.content} />
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>

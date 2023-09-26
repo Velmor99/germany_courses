@@ -6,7 +6,7 @@ const TextComponent = ({text, targets, textColor, fontWeight}: TextComponentProp
   console.log(fontWeight)
   const wrapWords = () => {
     const arr = text.split(" ")
-    const result: Array<string & {target: string}> = arr.map((item) => {
+    const result: Array<string | {target: string}> = arr.map((item: string | {target: string}) => {
       targets.map((target) => {
         if(item === target) {
           return item = {target: target}
@@ -18,7 +18,7 @@ const TextComponent = ({text, targets, textColor, fontWeight}: TextComponentProp
     return (
       <span>
         {result.map(item => {
-          if(item.target) {
+          if(typeof item === "object") {
             return <span className={cn(styles["text__"+textColor], styles["text__weight-"+fontWeight])}>{item.target + " "}</span>
           } else {
             return item + " "
