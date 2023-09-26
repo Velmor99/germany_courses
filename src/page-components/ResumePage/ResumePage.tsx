@@ -61,7 +61,11 @@ const ResumePageComponent = () => {
         <Pricing price={prices.resume} perLesson={false} />
       </section>
       <section className={styles["resume__how-it-works-section"]}>
-        <HowItWorks title="how_it_works" dataString="resume_how_it_works" />
+        <HowItWorks title="how_it_works" dataString="resume_how_it_works" textOptions={{
+          targets: ["«Оплатить»"],
+          fontWeight: 700,
+          colorText: "green"
+        }} />
       </section>
       <section className={styles["resume__form-section"]}>
         <FormComponent styleType="white" title="form.title_for_resume" />

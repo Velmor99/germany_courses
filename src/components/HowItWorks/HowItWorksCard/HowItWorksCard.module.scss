@@ -4,12 +4,48 @@
   display: grid;
   grid-template-columns: auto 1fr;
   width: 100%;
-  gap: 0 5px;
-  @media (min-width: $wide-phone-width) {
-    gap: 0 33px;
+  // gap: 0 20px;
+  &__resume {
+    gap: 0 20px;
+    @media (min-width: $tablet-width) {
+      gap: 0 17px;
+    }
   }
-  @media (min-width: $tablet-width) {
-    gap: 0 17px;
+  &__speaking-club {
+    gap: 0 10px;
+    @media (min-width: $wide-phone-width) {
+      gap: 0 33px;
+    }
+    @media (min-width: $tablet-width) {
+      gap: 0 17px;
+    }
+  }
+  &__documents {
+    gap: 0 5px;
+    @media (min-width: $wide-phone-width) {
+      gap: 0 33px;
+    }
+    @media (min-width: $tablet-width) {
+      gap: 0 17px;
+    }
+  }
+  &__students {
+    gap: 0 5px;
+    @media (min-width: $wide-phone-width) {
+      gap: 0 17px;
+    }
+  }
+  &__prepare-to-test {
+    gap: 0 5px;
+    @media (min-width: $wide-phone-width) {
+      gap: 0 17px;
+    }
+  }
+  &__consultation {
+    gap: 0 5px;
+    @media (min-width: $wide-phone-width) {
+      gap: 0 17px;
+    }
   }
 
   &__order {
@@ -18,12 +54,49 @@
     font-style: normal;
     font-weight: 700;
     line-height: 0.8;
+    // align-self: center;
     @media (min-width: $wide-phone-width) {
       line-height: normal;
       align-self: center;
     }
     @media (min-width: $tablet-width) {
       font-size: 100px;
+    }
+    &-resume {
+      align-self: center;
+      @media (min-width: $wide-phone-width) {
+        align-self: center;
+      }
+    }
+    &-speaking-club {
+      align-self: flex-start;
+      @media (min-width: $wide-phone-width) {
+        align-self: center;
+      }
+    }
+    &-documents {
+      align-self: flex-start;
+      @media (min-width: $wide-phone-width) {
+        align-self: center;
+      }
+    }
+    &-students {
+      align-self: flex-start;
+      @media (min-width: $unfolded-tablet-width) {
+        align-self: center;
+      }
+    }
+    &-prepare-to-test {
+      align-self: flex-start;
+      @media (min-width: $unfolded-tablet-width) {
+        align-self: center;
+      }
+    }
+    &-consultation {
+      align-self: flex-start;
+      @media (min-width: $unfolded-tablet-width) {
+        align-self: center;
+      }
     }
   }
 

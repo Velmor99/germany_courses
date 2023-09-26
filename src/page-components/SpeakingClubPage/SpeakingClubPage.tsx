@@ -31,8 +31,11 @@ const SpeakingClubPage = () => {
       <section className={styles["speaking-club__how-it-works-section"]}>
         <HowItWorks
           title="how_it_works"
-          dataString="speaking_club_how_it_works"
-        />
+          dataString="speaking_club_how_it_works" textOptions={{
+            targets: [],
+            fontWeight: 0,
+            colorText: "green"
+          }}        />
       </section>
       <section className={styles["speaking-club__price-section"]}>
         <Pricing price={prices.speaking_club} perLesson={true} />

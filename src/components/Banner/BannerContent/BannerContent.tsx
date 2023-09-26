@@ -4,6 +4,7 @@ import styles from "./BannerContent.module.scss";
 import cn from "classnames";
 
 const BannerContent = ({
+  bannerName,
   strong,
   text,
   greenText,
@@ -17,7 +18,7 @@ const BannerContent = ({
   return (
     <div className={cn(styles["banner-content"], className)}>
       <h1 className={cn(styles["banner-content__title"])}>
-        <span>
+        <span className={cn(styles["banner-content__text-block"])}>
           <strong className={cn(styles["banner-content__strong"])}>
             {strong + " "}
             {/* <span className={cn(styles["banner-content__symbol"])}>- </span> */}

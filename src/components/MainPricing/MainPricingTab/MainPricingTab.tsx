@@ -4,9 +4,8 @@ import ButtonComponent from "@/components/Button/Button";
 import { useTranslation } from "next-i18next";
 import { MainPricingTabProps } from "./MainPricingTab.props";
 import { useEffect, useState } from "react";
-import prices from '../../../../public/prices.json';
 import { GroupLevelType, IndividualLevelType } from "@/interfaces";
-
+import { motion } from "framer-motion";
 
 const MainPricingTab = ({ title, data }: MainPricingTabProps) => {
   const { t } = useTranslation();
@@ -14,26 +13,26 @@ const MainPricingTab = ({ title, data }: MainPricingTabProps) => {
   const [currentDuration, setCurrentDuration] = useState(0);
   const [currentPerHour, setCurrentPerHour] = useState(0);
   const [currentCoursePrice, setCurrentCoursePrice] = useState(0);
-  const [currentPriceWithDiscount, setCurrentPriceWithDiscount] = useState(0)
+  const [currentPriceWithDiscount, setCurrentPriceWithDiscount] = useState(0);
 
   useEffect(() => {
-    setCurrentLevel(data[0].level)
-    setCurrentDuration(data[0].duration)
-    setCurrentPerHour(data[0].pricePerHour)
-    setCurrentCoursePrice(data[0].allCoursePrice)
-    setCurrentPriceWithDiscount(data[0].priceWithDiscount)
+    setCurrentLevel(data[0].level);
+    setCurrentDuration(data[0].duration);
+    setCurrentPerHour(data[0].pricePerHour);
+    setCurrentCoursePrice(data[0].allCoursePrice);
+    setCurrentPriceWithDiscount(data[0].priceWithDiscount);
   }, []);
 
   const changeLevel = (level: IndividualLevelType | GroupLevelType) => {
-    const priceItem = data.find(item => item.level === level);
-    if(priceItem) {
-      setCurrentDuration(priceItem.duration)
-      setCurrentPerHour(priceItem.pricePerHour)
-      setCurrentCoursePrice(priceItem.allCoursePrice)
-      setCurrentPriceWithDiscount(priceItem.priceWithDiscount)
+    const priceItem = data.find((item) => item.level === level);
+    if (priceItem) {
+      setCurrentDuration(priceItem.duration);
+      setCurrentPerHour(priceItem.pricePerHour);
+      setCurrentCoursePrice(priceItem.allCoursePrice);
+      setCurrentPriceWithDiscount(priceItem.priceWithDiscount);
     }
     setCurrentLevel(level);
-  };  
+  };
 
   return (
     <div className={cn(styles["tab"])}>
@@ -55,29 +54,77 @@ const MainPricingTab = ({ title, data }: MainPricingTabProps) => {
 
         <div className={cn(styles["tab__information-block"])}>
           <div className={cn(styles["tab__duration-block"])}>
-            <h4 className={cn(styles["tab__information-title"], styles["tab__duration-title"])}>{t("main_pricing.duration")}</h4>
-            <p className={cn(styles["tab__information-value"])}>
+            <h4
+              className={cn(
+                styles["tab__information-title"],
+                styles["tab__duration-title"]
+              )}
+            >
+              {t("main_pricing.duration")}
+            </h4>
+            <motion.p
+              key={currentDuration}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.4, delay: 0.2 },
+              }}
+              className={cn(styles["tab__information-value"])}
+            >
               {currentDuration}
+            </motion.p>
+            <p className={cn(styles["tab__duration-hours"])}>
+              {t("main_pricing.hours")}
             </p>
-            <p className={cn(styles["tab__duration-hours"])}>{t("main_pricing.hours")}</p>
           </div>
 
           <div className={cn(styles["tab__per-hour-block"])}>
-            <h4 className={cn(styles["tab__information-title"])}>{t("main_pricing.per_hour")}</h4>
-            <p className={cn(styles["tab__information-value"])}>
+            <h4 className={cn(styles["tab__information-title"])}>
+              {t("main_pricing.per_hour")}
+            </h4>
+            <motion.p
+              key={currentPerHour}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.4, delay: 0.2 },
+              }}
+              className={cn(styles["tab__information-value"])}
+            >
               {`€${currentPerHour}`}
-            </p>
+            </motion.p>
           </div>
 
           <div className={cn(styles["tab__per-course-block"])}>
-            <h4 className={cn(styles["tab__information-title"], styles["tab__per-course-title"])}>{t("main_pricing.per_course")}</h4>
-            <p className={cn(styles["tab__information-value"])}>
+            <h4
+              className={cn(
+                styles["tab__information-title"],
+                styles["tab__per-course-title"]
+              )}
+            >
+              {t("main_pricing.per_course")}
+            </h4>
+            <motion.p
+              key={currentCoursePrice}
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: 1,
+                transition: { duration: 0.4, delay: 0.2 },
+              }}
+              className={cn(styles["tab__information-value"])}
+            >
               {`€${currentCoursePrice}`}
-              {currentCoursePrice !== currentPriceWithDiscount && 
-              <span className={cn(styles["tab__information-discount"], styles["tab__per-course-discount"])}>
-                {`€${currentPriceWithDiscount}`}
-              </span>}
-            </p>
+              {currentCoursePrice !== currentPriceWithDiscount && (
+                <span
+                  className={cn(
+                    styles["tab__information-discount"],
+                    styles["tab__per-course-discount"]
+                  )}
+                >
+                  {`€${currentPriceWithDiscount}`}
+                </span>
+              )}
+            </motion.p>
           </div>
         </div>
       </div>

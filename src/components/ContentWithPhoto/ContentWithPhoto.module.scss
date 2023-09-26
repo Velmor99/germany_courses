@@ -24,6 +24,7 @@
     margin: 0 auto;
     border-radius: 20px;
     margin-bottom: 20px;
+    position: relative;
     @media (min-width: $wide-phone-width) {
       width: 440px;
       height: 374px;
@@ -39,6 +40,17 @@
     }
     @media (min-width: $desktop-width) {
       margin-bottom: 0;
+    }
+  }
+
+  &__icon-block {
+    display: none;
+    @media (min-width: $wide-phone-width) {
+      display: block;
+      position: absolute;
+      transform: rotate(15deg);
+      bottom: -30px;
+      right: -7px;
     }
   }
 

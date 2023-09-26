@@ -14,6 +14,10 @@
     width: 581px;
   }
 
+  &__text-block {
+    display: block;
+  }
+
   &__title {
     text-align: center;
     width: 320px;
@@ -84,6 +88,9 @@
       line-height: normal;
       display: block;
       margin-bottom: 37px;
+    }
+    @media (min-width: $desktop-width) {
+      width: 563px;
     }
   }
 

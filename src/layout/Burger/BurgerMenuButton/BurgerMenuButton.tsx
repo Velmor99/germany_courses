@@ -19,7 +19,7 @@ const BurgerMenuButton = ({changeMenu, isShowed}: BurgerButtonMenuProps) => {
             <ArrowIcon />
           </div>
         </button>
-        {desktopNavMenu && <BurgerListDesktop />}
+        <BurgerListDesktop isOpened={desktopNavMenu} />
       </div>
       <div className={cn(styles["menu-button__mobile"])}>
         <button onClick={changeMenu} className={cn(styles["menu-button__mobile-button"])}>
