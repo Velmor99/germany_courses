@@ -27,6 +27,7 @@ const Banner = ({ bannerName, greenContent = false }: BannerProps) => {
               })}>
               </div>
               <BannerContent
+                bannerName={bannerName}
                 className={cn(styles["banner__inner-content"])}
                 strong={t(`${bannerName}.strong`)}
                 text={t(`${bannerName}.text`)}

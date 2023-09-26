@@ -43,8 +43,11 @@ const ConsultationPage = () => {
       <section className={styles["consultation__how-it-works-section"]}>
         <HowItWorks
           title="how_it_works"
-          dataString="consultation_how_it_works"
-        />
+          dataString="consultation_how_it_works" textOptions={{
+            targets: [],
+            fontWeight: 0,
+            colorText: "white"
+          }}        />
       </section>
       <section className={styles["consultation__pricing-section"]}>
         <Pricing price={prices.consultation} perLesson={false} />

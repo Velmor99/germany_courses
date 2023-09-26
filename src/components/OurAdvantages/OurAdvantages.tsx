@@ -60,9 +60,9 @@ const OurAdvantages = ({ imageType }: OurAdvantagesProps) => {
                     strongText={t("our_advantages_prepare_to_test.1.strong")}
                     text={t("our_advantages_prepare_to_test.1.text")}
                     className={styles["big_text"]} textOption={{
-                      targets: [],
-                      fontWeight: 0,
-                      colorText: "white"
+                      targets: ['моделирование', 'экзаменационных', 'ситуаций.'],
+                      fontWeight: 700,
+                      colorText: "green"
                     }}                />
               </li>
               <li className={cn(styles["our-advantages__list-item"])}>
@@ -75,8 +75,8 @@ const OurAdvantages = ({ imageType }: OurAdvantagesProps) => {
                     )}
                     strongText={t("our_advantages_prepare_to_test.2.strong")}
                     text={t("our_advantages_prepare_to_test.2.text")} textOption={{
-                      targets: [],
-                      fontWeight: 0,
+                      targets: ['подходящий', 'формат:'],
+                      fontWeight: 700,
                       colorText: "green"
                     }}                />
               </li>
@@ -90,8 +90,8 @@ const OurAdvantages = ({ imageType }: OurAdvantagesProps) => {
                     )}
                     strongText={t("our_advantages_prepare_to_test.3.strong")}
                     text={t("our_advantages_prepare_to_test.3.text")} textOption={{
-                      targets: [],
-                      fontWeight: 0,
+                      targets: ['обеспечить', 'вашу', 'уверенность'],
+                      fontWeight: 700,
                       colorText: "green"
                     }}                />
               </li>
@@ -105,8 +105,8 @@ const OurAdvantages = ({ imageType }: OurAdvantagesProps) => {
                     )}
                     strongText={t("our_advantages_prepare_to_test.4.strong")}
                     text={t("our_advantages_prepare_to_test.4.text")} textOption={{
-                      targets: [],
-                      fontWeight: 0,
+                      targets: ['уделить', 'внимание', 'сложным', 'темам'],
+                      fontWeight: 700,
                       colorText: "green"
                     }}                />
               </li>

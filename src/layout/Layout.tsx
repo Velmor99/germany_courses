@@ -5,7 +5,7 @@ import { LayoutProps } from "./Layout.props";
 import cn from "classnames";
 import styles from "./Layout.module.scss";
 import BurgerMenu from "./Burger/BurgerMenu/BurgerMenu";
-import { useMenuAnimation } from "./Header/Animation";
+import { motion } from "framer-motion";
 
 const Layout = ({ children }: LayoutProps): JSX.Element => {
   const [showedBurgerMenu, setShowedBurgerMenu] = useState(false);
@@ -21,16 +21,26 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     }
   };
 
-  const scope = useMenuAnimation(showedBurgerMenu);
   return (
     <div className={cn(styles["layout"])}>
       <Header
         setBurgerMenu={changeShowBurgerMenu}
         isShowedBurger={showedBurgerMenu}
       />
-      <div ref={scope}>
-        <BurgerMenu className={cn(styles["burger-menu"])} />
-      </div>
+      <motion.div
+        className={cn(styles["burger-menu"])}
+        initial={{ translateX: "100%" }}
+        animate={
+          showedBurgerMenu
+            ? {
+                translateX: "0%",
+              }
+            : { translateX: "100%" }
+        }
+        transition={{ duration: 0.25 }}
+      >
+        <BurgerMenu setBurgerMenu={changeShowBurgerMenu} />
+      </motion.div>
       {children}
       <Footer />
     </div>

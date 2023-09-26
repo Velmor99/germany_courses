@@ -5,7 +5,7 @@ import { HowItWorksProps } from "./HowItWorks.props";
 import HowItWorksCard from "./HowItWorksCard/HowItWorksCard";
 import data from "@/../public/locales/de/common.json";
 
-const HowItWorks = ({ title, dataString }: HowItWorksProps) => {
+const HowItWorks = ({ title, dataString, textOptions }: HowItWorksProps) => {
   const { t } = useTranslation();
 
   //TODO in anouther file
@@ -42,9 +42,11 @@ const HowItWorks = ({ title, dataString }: HowItWorksProps) => {
             {createFormatedData().map((item, idx) => (
               <li key={idx} className={cn(styles["how-it-works__list-item"])}>
                 <HowItWorksCard
+                  className={dataString}
                   strong={item.strong}
                   text={item.text}
                   order={idx + 1}
+                  options={textOptions}
                 />
               </li>
             ))}

@@ -29,7 +29,11 @@ const DocumentsPage = () => {
         <OurAdvantages imageType={"documents"} />
       </section>
       <section className={styles["documents__how-it-works-section"]}>
-        <HowItWorks title="how_it_works" dataString="documents_how_it_works" />
+        <HowItWorks title="how_it_works" dataString="documents_how_it_works" textOptions={{
+          targets: [],
+          fontWeight: 0,
+          colorText: "green"
+        }} />
       </section>
       <section className={styles["documents__pricing-section"]}>
         <Pricing price={prices.documents} perLesson={false} />

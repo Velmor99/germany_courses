@@ -17,12 +17,15 @@
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     @media (min-width: $wide-phone-width) {
+      font-size: 30px;
       font-size: 45px;
     }
-    @media (min-width: $unfolded-tablet-width) {
+    @media (min-width: $tablet-width) {
       margin-bottom: 0;
+    }
+    @media (min-width: $unfolded-tablet-width) {
       text-align: left;
     }
     @media (min-width: $desktop-width) {

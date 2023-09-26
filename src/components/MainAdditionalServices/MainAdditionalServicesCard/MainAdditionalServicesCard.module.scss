@@ -63,6 +63,12 @@
     align-items: center;
     cursor: pointer;
     justify-self: end;
+    transition: background-color linear .25s;
+    &:hover {
+      color: $white;
+      background-color: $main-green;
+      transition: background-color linear .25s;
+    }
   }
 
   &__price {

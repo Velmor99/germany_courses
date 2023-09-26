@@ -31,7 +31,11 @@ const StudentsPage = () => {
       </div>
       </section>
       <section className={styles["students__how-it-works-section"]}>
-        <HowItWorks title="how_it_works" dataString="students_how_it_works" />
+        <HowItWorks title="how_it_works" dataString="students_how_it_works" textOptions={{
+          targets: [],
+          fontWeight: 0,
+          colorText: "white"
+        }} />
       </section>
       <section className={styles["students__pricing-section"]}>
         <Pricing price={prices.students} perLesson={false} />
